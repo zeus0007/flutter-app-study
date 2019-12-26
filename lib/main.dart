@@ -45,8 +45,8 @@ class _MyButtonState extends State<MyButton> {
         ),
         Row(
           children: <Widget>[
-            makeButton('더하기'),
-            makeButton('빼기'),
+            makeButton('더하기', () => number++),
+            makeButton('빼기', () => number--),
           ],
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         ),
@@ -55,16 +55,12 @@ class _MyButtonState extends State<MyButton> {
     ));
   }
 
-  Widget makeButton(String title) {
+  Widget makeButton(String title, VoidCallback callback) {
     return RaisedButton(
       child: Text(title),
       onPressed: () {
         setState(() {
-          if (title == '더하기') {
-            number = number + 1;
-          } else {
-            number = number - 1;
-          }
+          callback();
         });
       },
       textColor: Colors.white,
