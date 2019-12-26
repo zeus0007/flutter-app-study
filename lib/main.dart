@@ -14,11 +14,13 @@ class MyApp extends StatelessWidget {
 class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    AppBar appBar = AppBar(
+      title: Text('버튼'),
+    );
     return Scaffold(
-        appBar: AppBar(
-          title: Text('버튼'),
-        ),
-        body: MyButton());
+      appBar: appBar,
+      body: MyButton(),
+    );
   }
 }
 
@@ -29,30 +31,35 @@ class MyButton extends StatefulWidget {
 
 class _MyButtonState extends State<MyButton> {
   var backColor = Colors.black;
-  int number = 0;
+  String path = "images/test_img1.jpg";
+  String pathSea = "images/test_img1.jpg";
+  String pathMountain = "images/test_img2.jpg";
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-        child: Column(
-      children: <Widget>[
-        Container(
-          child: Text(
-            number.toString(),
-            style: TextStyle(fontSize: 128),
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
+    return Container(
+      child: Stack(
+        children: <Widget>[
+          SizedBox.expand(
+            child: Image.asset(path, fit: BoxFit.cover),
           ),
-          padding: EdgeInsets.all(32),
-        ),
-        Row(
-          children: <Widget>[
-            makeButton('더하기', () => number++),
-            makeButton('빼기', () => number--),
-          ],
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        ),
-      ],
-      mainAxisAlignment: MainAxisAlignment.center,
-    ));
+          Column(
+            children: <Widget>[
+              Row(
+                children: <Widget>[
+                  makeButton('산', () => {path = pathMountain}),
+                  makeButton('바다', () => {path = pathSea}),
+                ],
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              ),
+            ],
+            mainAxisAlignment: MainAxisAlignment.center,
+          ),
+        ],
+      ),
+    );
   }
 
   Widget makeButton(String title, VoidCallback callback) {
