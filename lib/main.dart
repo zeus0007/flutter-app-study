@@ -18,23 +18,31 @@ class MainPage extends StatelessWidget {
         appBar: AppBar(
           title: Text('사진'),
         ),
-        body: MyApp1());
+        body: MyButton());
   }
 }
 
-class MyApp1 extends StatelessWidget {
+class MyButton extends StatefulWidget {
+  @override
+  _MyButtonState createState() => _MyButtonState();
+}
+
+class _MyButtonState extends State<MyButton> {
+  var backColor = Colors.black;
+
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: RaisedButton(
-          child: Text('Click Me!'),
-          onPressed: clickMe,
-          textColor: Colors.white,
-          color: Colors.black),
-    );
-  }
-
-  void clickMe() {
-    print('clicked!');
+        child: RaisedButton(
+      child: Text('상태'),
+      onPressed: () {
+        setState(() {
+          backColor =
+              (backColor == Colors.black) ? Colors.lightBlue : Colors.black;
+        });
+      },
+      textColor: Colors.white,
+      color: backColor,
+    ));
   }
 }
