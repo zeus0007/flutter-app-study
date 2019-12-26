@@ -25,30 +25,19 @@ class MainPage extends StatelessWidget {
 class MyApp1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return GridView.count(
+      padding: EdgeInsets.all(5.0),
+      mainAxisSpacing: 10.0,
+      crossAxisSpacing: 10.0,
+      crossAxisCount: 2,
       children: <Widget>[
-        makeRow(
-          'images/test_img1.jpg',
-          'images/test_img2.jpg',
-        ),
-        makeRow('images/test_img3.jpg', 'images/test_img4.jpg')
+        Image.asset('images/test_img1.jpg', fit: BoxFit.contain),
+        Image.asset('images/test_img1.jpg', fit: BoxFit.fill),
+        Image.asset('images/test_img1.jpg', fit: BoxFit.fitWidth),
+        Image.asset('images/test_img1.jpg', fit: BoxFit.fitHeight),
+        Image.asset('images/test_img1.jpg', fit: BoxFit.cover),
+        Image.asset('images/test_img1.jpg', fit: BoxFit.none),
       ],
     );
-  }
-
-  Widget makeRow(String leftPath, String rightPath) {
-    return IntrinsicHeight(
-      child: Row(children: <Widget>[
-        makeExpandedImage(leftPath),
-        makeExpandedImage(rightPath)
-      ], crossAxisAlignment: CrossAxisAlignment.stretch),
-    );
-  }
-
-  Widget makeExpandedImage(String imagePath) {
-    return Expanded(
-        child: Container(
-            child: Image.asset(imagePath, fit: BoxFit.cover),
-            margin: EdgeInsets.all(5.0)));
   }
 }
