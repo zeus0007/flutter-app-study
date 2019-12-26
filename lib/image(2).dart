@@ -27,28 +27,21 @@ class MyApp1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        makeRow(
-          'images/test_img1.jpg',
-          'images/test_img2.jpg',
+        Row(
+          children: <Widget>[getImg('url')],
         ),
-        makeRow('images/test_img3.jpg', 'images/test_img4.jpg')
       ],
     );
   }
 
-  Widget makeRow(String leftPath, String rightPath) {
-    return IntrinsicHeight(
-      child: Row(children: <Widget>[
-        makeExpandedImage(leftPath),
-        makeExpandedImage(rightPath)
-      ], crossAxisAlignment: CrossAxisAlignment.stretch),
+  Widget getImg(String url) {
+    return Image.asset(
+      url,
+      width: 400,
+      height: 300,
+      color: Colors.red,
+      fit: BoxFit.fill,
+      colorBlendMode: BlendMode.colorBurn,
     );
-  }
-
-  Widget makeExpandedImage(String imagePath) {
-    return Expanded(
-        child: Container(
-            child: Image.asset(imagePath, fit: BoxFit.cover),
-            margin: EdgeInsets.all(5.0)));
   }
 }
