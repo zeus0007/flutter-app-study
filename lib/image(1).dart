@@ -25,14 +25,6 @@ class MainPage extends StatelessWidget {
 class MyApp1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(
-        child: Image.asset(
-      'images/test_img1.jpg',
-      width: 400,
-      height: 300,
-      color: Colors.red,
-      fit: BoxFit.fill,
-      colorBlendMode: BlendMode.colorBurn,
-    ));
+    return Image.asset('images/test_img1.jpg');
   }
 }
