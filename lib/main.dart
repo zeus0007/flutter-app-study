@@ -19,59 +19,57 @@ class MainPage extends StatelessWidget {
     );
     return Scaffold(
       appBar: appBar,
-      body: MyButton(),
+      body: MyApp2(),
     );
   }
 }
 
-class MyButton extends StatefulWidget {
-  @override
-  _MyButtonState createState() => _MyButtonState();
-}
-
-class _MyButtonState extends State<MyButton> {
-  var backColor = Colors.black;
-  String path = "images/test_img1.jpg";
-  String pathSea = "images/test_img1.jpg";
-  String pathMountain = "images/test_img2.jpg";
+class MyApp2 extends StatelessWidget {
+  BuildContext ctx;
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
-    return Container(
-      child: Stack(
+    ctx = context;
+    return Center(
+      child: Column(
         children: <Widget>[
-          SizedBox.expand(
-            child: Image.asset(path, fit: BoxFit.cover),
+          RaisedButton(
+            child: Text('RaisedButton', style: TextStyle(fontSize: 24)),
+            onPressed: () => showMessage('RaisedButton'),
           ),
-          Column(
-            children: <Widget>[
-              Row(
-                children: <Widget>[
-                  makeButton('산', () => {path = pathMountain}),
-                  makeButton('바다', () => {path = pathSea}),
-                ],
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              ),
-            ],
-            mainAxisAlignment: MainAxisAlignment.center,
+          FlatButton(
+            child: Text('FlatButton', style: TextStyle(fontSize: 24)),
+            onPressed: () => showMessage('FlatButton'),
+            color: Colors.green,
+            textColor: Colors.white,
           ),
+          IconButton(
+            icon: Icon(Icons.print),
+            onPressed: () => showMessage('IconButton'),
+          ),
+          FloatingActionButton(
+            child: Icon(Icons.add),
+            onPressed: () => showMessage('FloatingActionButton'),
+          ),
+          InkWell(
+            child: Text('InkWell', style: TextStyle(fontSize: 24)),
+            onTap: () => showMessage('InkWell'),
+          ),
+          InkWell(
+            child: Image.asset('images/.jpg', width: 120, height: 120),
+            onTap: () => showMessage('ImageButton'),
+          )
         ],
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       ),
     );
   }
 
-  Widget makeButton(String title, VoidCallback callback) {
-    return RaisedButton(
-      child: Text(title),
-      onPressed: () {
-        setState(() {
-          callback();
-        });
-      },
-      textColor: Colors.white,
-      color: backColor,
-    );
+  void showMessage(String msg) {
+    final snackbar = SnackBar(content: Text(msg));
+
+    Scaffold.of(ctx)
+      ..removeCurrentSnackBar()
+      ..showSnackBar(snackbar);
   }
 }
