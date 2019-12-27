@@ -15,61 +15,52 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AppBar appBar = AppBar(
-      title: Text('버튼'),
+      title: Text('텍스트 입력'),
     );
     return Scaffold(
       appBar: appBar,
-      body: MyApp2(),
+      body: InputSample(),
     );
   }
 }
 
-class MyApp2 extends StatelessWidget {
-  BuildContext ctx;
+class InputSample extends StatefulWidget {
+  @override
+  _InputSampleState createState() => _InputSampleState();
+}
+
+class _InputSampleState extends State<InputSample> {
+  String inputs = '';
 
   @override
   Widget build(BuildContext context) {
-    ctx = context;
     return Center(
       child: Column(
         children: <Widget>[
-          RaisedButton(
-            child: Text('RaisedButton', style: TextStyle(fontSize: 24)),
-            onPressed: () => showMessage('RaisedButton'),
+          Container(
+            child: TextField(
+              style: TextStyle(fontSize: 32, color: Colors.red),
+              textAlign: TextAlign.center,
+              decoration: InputDecoration(hintText: '입력해 주세요'),
+              onChanged: (String str) {
+                setState(() => inputs = str);
+              },
+            ),
+            padding: EdgeInsets.only(top: 10, bottom: 10),
+            width: 300,
           ),
-          FlatButton(
-            child: Text('FlatButton', style: TextStyle(fontSize: 24)),
-            onPressed: () => showMessage('FlatButton'),
-            color: Colors.green,
-            textColor: Colors.white,
+          Container(
+            child: Text(
+              inputs,
+              style: TextStyle(fontSize: 32),
+              textAlign: TextAlign.center,
+            ),
+            padding: EdgeInsets.only(top: 10, bottom: 10),
+            width: 300,
           ),
-          IconButton(
-            icon: Icon(Icons.print),
-            onPressed: () => showMessage('IconButton'),
-          ),
-          FloatingActionButton(
-            child: Icon(Icons.add),
-            onPressed: () => showMessage('FloatingActionButton'),
-          ),
-          InkWell(
-            child: Text('InkWell', style: TextStyle(fontSize: 24)),
-            onTap: () => showMessage('InkWell'),
-          ),
-          InkWell(
-            child: Image.asset('images/.jpg', width: 120, height: 120),
-            onTap: () => showMessage('ImageButton'),
-          )
         ],
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.center,
       ),
     );
-  }
-
-  void showMessage(String msg) {
-    final snackbar = SnackBar(content: Text(msg));
-
-    Scaffold.of(ctx)
-      ..removeCurrentSnackBar()
-      ..showSnackBar(snackbar);
   }
 }
