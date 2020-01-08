@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:math';
-
-import 'package:flutter/semantics.dart';
 
 void main() => runApp(MaterialApp(home: MyApp()));
 
