@@ -11,3 +11,4 @@
 3. UdemyAngelaFlutter
    - Udemy.com의 The Complete 2020 Flutter Development Bootcamp with Dart 강의 내용 정리
    - [UdemyAngelaFlutter-MeCard branch](https://github.com/zeus0007/flutterapp_study/tree/UdemyAngelaFlutter-MeCard)
+   - [UdemyAngelaFlutter-Dicee branch](https://github.com/zeus0007/flutterapp_study/tree/UdemyAngelaFlutter-Dicee)
