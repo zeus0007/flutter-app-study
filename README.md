@@ -1,3 +1,3 @@
 ## Magic 8 Ball
 
-![screenshot](./Screenshot.png =300)
+![Screenshot](./Screenshot.png =300)
