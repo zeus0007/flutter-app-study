@@ -24,6 +24,16 @@ class DicePage extends StatefulWidget {
 class _DicePageState extends State<DicePage> {
   var randomNumberLeft = 1;
   var randomNumberRight = 1;
+
+  void randomDice() {
+    setState(() {
+      randomNumberLeft = 1 + Random().nextInt(6);
+      randomNumberRight = 1 + Random().nextInt(6);
+      print('Left button got pressed. $randomNumberLeft');
+      print('Right button got pressed. $randomNumberRight');
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -32,12 +42,7 @@ class _DicePageState extends State<DicePage> {
           Expanded(
             child: FlatButton(
               onPressed: () {
-                setState(() {
-                  randomNumberLeft = 1 + Random().nextInt(6);
-                  randomNumberRight = 1 + Random().nextInt(6);
-                });
-                print('Left button got pressed. $randomNumberLeft');
-                print('Right button got pressed. $randomNumberRight');
+                randomDice();
               },
               child: Image.asset('images/dice$randomNumberLeft.png'),
             ),
@@ -45,12 +50,7 @@ class _DicePageState extends State<DicePage> {
           Expanded(
             child: FlatButton(
               onPressed: () {
-                setState(() {
-                  randomNumberLeft = 1 + Random().nextInt(6);
-                  randomNumberRight = 1 + Random().nextInt(6);
-                });
-                print('Left button got pressed. $randomNumberLeft');
-                print('Right button got pressed. $randomNumberRight');
+                randomDice();
               },
               child: Image.asset('images/dice$randomNumberRight.png'),
             ),
