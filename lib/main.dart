@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() {
   return runApp(
@@ -18,15 +19,18 @@ void main() {
 class DicePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var random = new Random();
+    var randomNumber = 2;
     return Center(
       child: Row(
         children: <Widget>[
           Expanded(
             child: FlatButton(
               onPressed: () {
-                print('Left button got pressed.');
+                randomNumber = 1 + random.nextInt(10);
+                print('Left button got pressed. $randomNumber');
               },
-              child: Image.asset('images/dice1.png'),
+              child: Image.asset('images/dice$randomNumber.png'),
             ),
           ),
           Expanded(
