@@ -1,3 +1,3 @@
 ## Magic 8 Ball
 
-![Screenshot](./Screenshot.png =300)
+<img src="./Screenshot.png" width="300">
