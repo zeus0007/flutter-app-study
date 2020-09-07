@@ -10,7 +10,7 @@
    - [UdemyAngelaFlutter-MeCard branch](https://github.com/zeus0007/flutterapp_study/tree/UdemyAngelaFlutter-MeCard)
    - [UdemyAngelaFlutter-Dicee branch](https://github.com/zeus0007/flutterapp_study/tree/UdemyAngelaFlutter-Dicee)
    - [UdemyAngelaFluuter-Magic8Ball branch](https://github.com/zeus0007/flutterapp_study/tree/UdemyAngelaFlutter-Magic8Ball)
-   - [UdemyAngelaFlutter-Xylophone brnach](https://github.com/zeus0007/flutterapp_study/tree/UdemyAngelaFlutter-Xylophone)
+   - [UdemyAngelaFlutter-Xylophone branch](https://github.com/zeus0007/flutterapp_study/tree/UdemyAngelaFlutter-Xylophone)
 
 3. [LearnFlutter&Dart-Udemy branch](https://github.com/zeus0007/flutterapp_study/tree/LearnFlutterUdemy)
 
