@@ -31,7 +31,22 @@ class _QuizPageState extends State<QuizPage> {
     'Approximately one quarter of human bones are in the feet.',
     'A slug\'s blood is green.'
   ];
+  List<bool> answers = [false, true, true];
   int questionNumber = 0;
+  void answerTrue() {
+    socreKeeper.add(Icon(
+      Icons.check,
+      color: Colors.green,
+    ));
+  }
+
+  void answerFalse() {
+    socreKeeper.add(Icon(
+      Icons.close,
+      color: Colors.red,
+    ));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -68,12 +83,15 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
+                bool correctAnswer = answers[questionNumber];
+
                 setState(() {
-                  questionNumber += 1;
-                  socreKeeper.add(Icon(
-                    Icons.check,
-                    color: Colors.green,
-                  ));
+                  if (correctAnswer == true) {
+                    answerTrue();
+                  } else {
+                    answerFalse();
+                  }
+                  questionNumber++;
                 });
               },
             ),
@@ -92,12 +110,14 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
+                bool correctAnswer = answers[questionNumber];
                 setState(() {
-                  questionNumber += 1;
-                  socreKeeper.add(Icon(
-                    Icons.close,
-                    color: Colors.red,
-                  ));
+                  if (correctAnswer == false) {
+                    answerTrue();
+                  } else {
+                    answerFalse();
+                  }
+                  questionNumber++;
                 });
               },
             ),
