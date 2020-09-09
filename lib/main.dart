@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+//TODO: Step 2 - Import the rFlutter_Alert package here.
 import 'quiz_brain.dart';
 
 QuizBrain quizBrain = QuizBrain();
@@ -30,18 +31,30 @@ class QuizPage extends StatefulWidget {
 class _QuizPageState extends State<QuizPage> {
   List<Widget> socreKeeper = [];
 
-  void answerTrue() {
-    socreKeeper.add(Icon(
-      Icons.check,
-      color: Colors.green,
-    ));
-  }
+  void checkAnswer(bool userPickedAnswer) {
+    bool correctAnswer = quizBrain.getQuestionAnswer();
 
-  void answerFalse() {
-    socreKeeper.add(Icon(
-      Icons.close,
-      color: Colors.red,
-    ));
+    setState(() {
+      //TODO: Step 4 - Use IF/ELSE to check if we've reached the end of the quiz. If true, execute Part A, B, C, D.
+      //TODO: Step 4 Part A - show an alert using rFlutter_alert (remember to read the docs for the package!)
+      //HINT! Step 4 Part B is in the quiz_brain.dart
+      //TODO: Step 4 Part C - reset the questionNumber,
+      //TODO: Step 4 Part D - empty out the scoreKeeper.
+
+      //TODO: Step 6 - If we've not reached the end, ELSE do the answer checking steps below 👇
+      if (correctAnswer == userPickedAnswer) {
+        socreKeeper.add(Icon(
+          Icons.check,
+          color: Colors.green,
+        ));
+      } else {
+        socreKeeper.add(Icon(
+          Icons.close,
+          color: Colors.red,
+        ));
+      }
+      quizBrain.nextQuestion();
+    });
   }
 
   @override
@@ -80,16 +93,7 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                bool correctAnswer = quizBrain.getQuestionAnswer();
-
-                setState(() {
-                  if (correctAnswer == true) {
-                    answerTrue();
-                  } else {
-                    answerFalse();
-                  }
-                  quizBrain.nextQuestion();
-                });
+                checkAnswer(true);
               },
             ),
           ),
@@ -107,15 +111,7 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                bool correctAnswer = quizBrain.getQuestionAnswer();
-                setState(() {
-                  if (correctAnswer == false) {
-                    answerTrue();
-                  } else {
-                    answerFalse();
-                  }
-                  quizBrain.nextQuestion();
-                });
+                checkAnswer(false);
               },
             ),
           ),
