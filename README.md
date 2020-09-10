@@ -12,7 +12,7 @@
    - [UdemyAngelaFluuter-Magic8Ball branch](https://github.com/zeus0007/flutterapp_study/tree/UdemyAngelaFlutter-Magic8Ball)
    - [UdemyAngelaFlutter-Xylophone branch](https://github.com/zeus0007/flutterapp_study/tree/UdemyAngelaFlutter-Xylophone)
    - [UdemyAngelaFlutter-Quizzler branch](https://github.com/zeus0007/flutterapp_study/tree/UdemyAngelaFlutter-Quizzler)
-   -
+   - [UdemyAngelaFlutter-Destiny branch](https://github.com/zeus0007/flutterapp_study/tree/UdemyAngelaFlutter-Destiny)
 
 3. [LearnFlutter&Dart-Udemy branch](https://github.com/zeus0007/flutterapp_study/tree/LearnFlutterUdemy)
 
