@@ -9,10 +9,11 @@
    - Udemy.com의 The Complete 2020 Flutter Development Bootcamp with Dart 강의 내용 정리
    - [UdemyAngelaFlutter-MeCard branch](https://github.com/zeus0007/flutterapp_study/tree/UdemyAngelaFlutter-MeCard)
    - [UdemyAngelaFlutter-Dicee branch](https://github.com/zeus0007/flutterapp_study/tree/UdemyAngelaFlutter-Dicee)
-   - [UdemyAngelaFluuter-Magic8Ball branch](https://github.com/zeus0007/flutterapp_study/tree/UdemyAngelaFlutter-Magic8Ball)
+   - [UdemyAngelaFlutter-Magic8Ball branch](https://github.com/zeus0007/flutterapp_study/tree/UdemyAngelaFlutter-Magic8Ball)
    - [UdemyAngelaFlutter-Xylophone branch](https://github.com/zeus0007/flutterapp_study/tree/UdemyAngelaFlutter-Xylophone)
    - [UdemyAngelaFlutter-Quizzler branch](https://github.com/zeus0007/flutterapp_study/tree/UdemyAngelaFlutter-Quizzler)
    - [UdemyAngelaFlutter-Destiny branch](https://github.com/zeus0007/flutterapp_study/tree/UdemyAngelaFlutter-Destiny)
+   - [UdemyAngelaFlutter-BMI_Calculator branch (공부중)](https://github.com/zeus0007/flutterapp_study/tree/UdemyAngelaFlutter-BMI_Calculator)
 
 3. [LearnFlutter&Dart-Udemy branch](https://github.com/zeus0007/flutterapp_study/tree/LearnFlutterUdemy)
 
