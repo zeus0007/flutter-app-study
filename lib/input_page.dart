@@ -31,39 +31,35 @@ class _InputPageState extends State<InputPage> {
               child: Row(
                 children: [
                   Expanded(
-                    child: GestureDetector(
-                      onTap: () {
+                    child: ResuableCard(
+                      cardChild: IconContent(
+                        icon: FontAwesomeIcons.mars,
+                        label: 'MALE',
+                      ),
+                      colour: selectedGender == Gender.male
+                          ? activeCardColour
+                          : inactiveCardColour,
+                      onPress: () {
                         setState(() {
                           selectedGender = Gender.male;
                         });
                       },
-                      child: ResuableCard(
-                        cardChild: IconContent(
-                          icon: FontAwesomeIcons.mars,
-                          label: 'MALE',
-                        ),
-                        colour: selectedGender == Gender.male
-                            ? activeCardColour
-                            : inactiveCardColour,
-                      ),
                     ),
                   ),
                   Expanded(
-                    child: GestureDetector(
-                      onTap: () {
+                    child: ResuableCard(
+                      cardChild: IconContent(
+                        icon: FontAwesomeIcons.venus,
+                        label: 'FEMALE',
+                      ),
+                      colour: selectedGender == Gender.female
+                          ? activeCardColour
+                          : inactiveCardColour,
+                      onPress: () {
                         setState(() {
                           selectedGender = Gender.female;
                         });
                       },
-                      child: ResuableCard(
-                        cardChild: IconContent(
-                          icon: FontAwesomeIcons.venus,
-                          label: 'FEMALE',
-                        ),
-                        colour: selectedGender == Gender.female
-                            ? activeCardColour
-                            : inactiveCardColour,
-                      ),
                     ),
                   ),
                 ],
