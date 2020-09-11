@@ -13,8 +13,56 @@ class _InputPageState extends State<InputPage> {
         title: Text('BMI CALCULATOR'),
       ),
       body: Center(
-        child: Text('Body Text'),
+        child: Column(
+          children: [
+            Expanded(
+              child: Row(
+                children: [
+                  ResuableCard(
+                    colour: Color(0xFF1D1E33),
+                  ),
+                  ResuableCard(
+                    colour: Color(0xFF1D1E33),
+                  ),
+                ],
+              ),
+            ),
+            ResuableCard(
+              colour: Color(0xFF1D1E33),
+            ),
+            Expanded(
+              child: Row(
+                children: [
+                  ResuableCard(
+                    colour: Color(0xFF1D1E33),
+                  ),
+                  ResuableCard(
+                    colour: Color(0xFF1D1E33),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
+  }
+}
+
+class ResuableCard extends StatelessWidget {
+  ResuableCard({@required this.colour});
+
+  Color colour;
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+        child: Container(
+      margin: EdgeInsets.all(15.0),
+      decoration: BoxDecoration(
+        color: colour,
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+    ));
   }
 }
