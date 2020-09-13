@@ -29,6 +29,6 @@ const TextStyle kResultNumberTextStyle = TextStyle(
   fontSize: 100,
   fontWeight: FontWeight.bold,
 );
-const TextStyle kResultDescriptionTextStyle = TextStyle(
+const TextStyle kResultInterpretationTextStyle = TextStyle(
   fontSize: 22,
 );
