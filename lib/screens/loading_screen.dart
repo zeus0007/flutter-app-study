@@ -20,6 +20,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
   void getLocation() async {
     Location location = Location();
+
     await location.getCurrentLocation();
 
     NetworkHelper networkHelper = NetworkHelper(
