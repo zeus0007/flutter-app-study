@@ -15,6 +15,8 @@
    - [UdemyAngelaFlutter-Destiny branch](https://github.com/zeus0007/flutterapp_study/tree/UdemyAngelaFlutter-Destiny)
    - [UdemyAngelaFlutter-BMI_Calculator branch](https://github.com/zeus0007/flutterapp_study/tree/UdemyAngelaFlutter-BMI_Calculator)
    - [UdemyAngelaFlutter-Clima branch](https://github.com/zeus0007/flutterapp_study/tree/UdemyAngelaFlutter-Clima)
+   - [UdemyAngelaFlutter-Flash_Chat branch](https://github.com/zeus0007/flutterapp_study/tree/UdemyAngelaFlutter-Flash_Chat)
+   - [UdemyAngelaFlutter-Todoey branch](https://github.com/zeus0007/flutterapp_study/tree/UdemyAngelaFlutter-Todoey)
 
 3. [LearnFlutter&Dart-Udemy branch](https://github.com/zeus0007/flutterapp_study/tree/LearnFlutterUdemy)
 
